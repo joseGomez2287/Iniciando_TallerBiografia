@@ -1,3 +1,5 @@
+//movile first, cambiar cosas como que el logo quede al lado
+//de el titulo cuando cambie a resoluciones mayores y redondo
 gris_oscuro = #444
 naranja = #FE9A2E
 
@@ -10,20 +12,24 @@ body
 header
 	background gris_oscuro
 	color white
-	padding 0.5em
+	padding 0.5em 1.5em 1em 1em
+	position relative
 	
 	.logo
 		border-right 2px solid naranja
+		border-bottom 2px solid naranja
+		float right
 		width 90px
+		height 90px
 		img
 			//border-radius 50% si quiero activarlo! 
 			//esto lo que hace es: poner el logo redondo.
 			width 80px
-			
-			
+						
 	.titular
 	 	margin 100 // un solo numero indica alrededor 
-		.titulo
+	 	position absolute
+	 	.titulo
 			font-size 18px
 			font-weight normal
 			//margin 0
