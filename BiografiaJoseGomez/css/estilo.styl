@@ -2,6 +2,18 @@
 //de el titulo cuando cambie a resoluciones mayores y redondo
 gris_oscuro = #444
 naranja = #FE9A2E
+otro_gris = #686868
+
+@font-face {
+	font-family: 'iconos';
+	src:url('../fonts/icomoon.eot?-sfznjc');
+	src:url('../fonts/icomoon.eot?#iefix-sfznjc') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-sfznjc') format('woff'),
+		url('../fonts/icomoon.ttf?-sfznjc') format('truetype'),
+		url('../fonts/icomoon.svg?-sfznjc#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 body
 	background #E8E8E8
@@ -10,44 +22,52 @@ body
 	font-size 16px
 	
 header
-	background gris_oscuro
-	box-shadow 0 5px 0 rgba(0,0,0,0.2) black
+	background #27AB55
+	//box-shadow 0 5px 0 rgba(0,0,0,0.4) 
 	color white
+	font-family "Lobster"
 	overflow hidden
-	padding 0.5em 1.5em 1em 1em
+	padding 0.5em 1.5em 0.2em 1em
 	position relative
+	text-shadow 2px 2px 2px black
+	//z-index 1
 	
 	.logo
-		border-right 2px solid naranja
-		border-bottom 2px solid naranja
+		//border-right 2px solid naranja
+		//border-bottom 2px solid naranja
 		float right
-		width 90px
-		height 90px
+		//idth 90px
+		//height 90px
 		img
-			//border-radius 50% si quiero activarlo! 
+			border-radius 0.8em //si quiero activarlo
+			box-shadow 6px 6px 0 rgba(0,0,0,0.6)
 			//esto lo que hace es: poner el logo redondo.
-			width 80px
+			width 150px
 						
 	.titular
-	 	margin 100 // un solo numero indica alrededor 
+	 	//margin 1em 0 // un solo numero indica alrededor 
 	 	position absolute
 	 	.titulo
-			font-size 18px
+			font-size 1.5em
 			font-weight normal
-			//margin 0
-			//padding 0
+			margin  1.5em 0 2px 1px
 			
 nav
-	background naranja
+	background otro_gris
 	border-left 8px solid white
 	box-shadow 0 5px 0 rgba(0,0,0,0.4)
 	position relative
+	//position fixed //para que el nava se quede en pocision 
+	//estatica asi se le haga scrol, hay que poner tambien la
+	//caracterizica width q esta comentada al 100%
+	//tengo el error un error de posicion con este atributo. 	 
+	//width 100%
 	z-index 1
 	
 	&:before
-		border-bottom 20px solid naranja
+		border-bottom 20px solid otro_gris
 		border-left 10px solid white
-		border-top 20px solid naranja
+		border-top 20px solid otro_gris
 		content ""
 		position absolute
 		top 0
@@ -55,15 +75,15 @@ nav
 	
 	.menu
 		height 40px
-		line-height 40px
 		margin 0 1em
+		line-height 40px
+		//overflow-x auto si quiero activar el scroll
 		padding 0
-		overflow-x auto
 		white-space nowrap
 		
-		li 
+		li
 			display inline-block
-			margin 0 
+			//margin 0
 			
 			a
 				color white
@@ -72,7 +92,12 @@ nav
 				padding 0 0.2em
 				text-decoration none
 				//text-shadow 0.5px 0.5px 0px black sombra de el contenido a 
-	
+			a:hover
+				background gris_oscuro //#088A4B un verde
+				border-radius 8px
+				box-shadow 2px 3px 0 rgba(0,0,0,0.6)
+				text-shadow 2px 2px 2px black
+				transform: scale(1.1)
 	.lista
 		margin 1em 0 0 0
 		text decoration none
@@ -91,20 +116,93 @@ section
 		background white
 		border-radius 0.5em
 		box-shadow 5px 5px 10px rgba(0,0,0,0.5)
+		font-family "Open Sands"
 		padding 0.5em
 		margin 1em 2% 1em 1em
 		width 40%
 		
 	article, figure
+		border-radius 0.5em
 		display inline-block
 		vertical-align top
 		
 	.imagen
-		background black
+		background gray
 		width 40%
 		
 		img
+			border-radius 0.5em
+			box-shadow 5px 5px 10px rgba(0,0,0,0.5)
 			max-width 100%
+			vertical-align top
+			
+			
 footer
+	overflow hidden
 	background gris_oscuro
+	margin 0
+	padding 11px 0 
+		
+	.contacto
+		color rgba(white,0.5)
+		margin 0
+		padding 5px 0
+		text-align center
+	
+	.lista
+		margin 5px 0 
+		padding 0
+		list-style none
+		text-align center
+	
+		li
+			margin 0 
+			padding 1px 1em
+			display inline-block
+			
+			a
+				text-decoration none
+				color white
+				
+		
+		.twitter
+			&:before
+				border-radius 50%
+				content "\e601"
+				font-family iconos
+				font-size 1.5em
+				margin 5px
+				
+		.twitter:hover
+			&:before
+				background white
+				//border 0.5px solid #35b0ed
+				color #35b0ed
+				
+		.gmail
+			&:before
+				border-radius 50%
+				content "\e600"
+				font-family iconos
+				font-size 1.5em
+				margin 5px
+				
+		.gmail:hover
+			&:before
+				background white
+				color #FE2E2E
+					
+		.git
+			&:before
+				border-radius 50%
+				content "\e602"
+				font-family iconos
+				font-size 1.5em
+				margin 5px
+		.git:hover
+			&:before
+				background black
+				color #9A2EFE
+		
+		
 		
